@@ -1,0 +1,14 @@
+{
+  "layer": 23,
+  "pooling": "last",
+  "method": "lr",
+  "b": -15.000782012939453,
+  "threshold": 4.106327056884766,
+  "meta": {
+    "C": 0.1,
+    "val_auroc": 0.9925105850049256,
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "trained_on": "plain train + group-B-wrapped train prompts",
+    "threshold_rule": "1% FPR on plain val benign"
+  }
+}

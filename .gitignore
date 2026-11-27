@@ -1,0 +1,22 @@
+.venv/
+.venv2/
+acts/
+outputs/
+logs/
+data/*.jsonl
+data/raw/
+__pycache__/
+*.pyc
+.pytest_cache/
+models/
+.claude/settings.local.json
+
+# local build tooling (not part of the project)
+CLAUDE.md
+KICKOFF.md
+start.sh
+.claude/
+
+# generated locally by the pipeline
+results/report.md
+results/*/tfidf.pkl

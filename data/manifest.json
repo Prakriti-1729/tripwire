@@ -1,0 +1,42 @@
+{
+  "plain": {
+    "test_benign": 313,
+    "test_harmful": 190,
+    "train_benign": 739,
+    "train_harmful": 455,
+    "val_benign": 186,
+    "val_harmful": 114
+  },
+  "plain_by_source": {
+    "jbb": 100,
+    "harmbench": 187,
+    "advbench": 472,
+    "jbb_benign": 100,
+    "alpaca": 1138
+  },
+  "wrapped_test": 5030,
+  "wrapped_aug": 7470,
+  "xstest": {
+    "safe": 250,
+    "unsafe": 200
+  },
+  "families": {
+    "roleplay": "A",
+    "refusal_suppression": "A",
+    "base64": "A",
+    "translation": "A",
+    "hypothetical": "A",
+    "fiction": "B",
+    "research": "B",
+    "prefix_injection": "B",
+    "dev_mode": "B",
+    "payload_split": "B"
+  },
+  "log": [
+    "JBB: 100 harmful, 100 benign",
+    "HarmBench standard: 200",
+    "AdvBench: 520",
+    "Harmful after dedup: 759 (removed 20 exact, 41 near-duplicates @ cos>=0.85)",
+    "Benign: 100 JBB-benign + 1138 Alpaca = 1238 (dedup removed 0 exact, 0 near)"
+  ]
+}

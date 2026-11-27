@@ -1,0 +1,8 @@
+{
+  "layer": 23,
+  "pooling": "last",
+  "method": "dom",
+  "b": -36.33995056152344,
+  "threshold": 16.981163024902344,
+  "meta": {}
+}

@@ -1,0 +1,164 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "layer": 23,
+  "n_layers": 28,
+  "pooling": "last",
+  "guard": "ibm-granite/granite-guardian-3.2-3b-a800m",
+  "guard2": "ibm-granite/granite-guardian-3.1-2b",
+  "runs": 100,
+  "warmup": 10,
+  "batch_size": 1,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+  "gpu_status_before": {
+    "util_pct": 99,
+    "mem_used_mib": 16848,
+    "mem_total_mib": 97887,
+    "n_compute_procs_incl_ours": 4
+  },
+  "lengths": {
+    "64": {
+      "a_prefill": {
+        "median_ms": 19.27,
+        "p90_ms": 21.595,
+        "mean_ms": 19.976,
+        "n": 100
+      },
+      "b_prefill_plus_probe": {
+        "median_ms": 21.615,
+        "p90_ms": 23.839,
+        "mean_ms": 21.984,
+        "n": 100
+      },
+      "d_early_abort_at_L": {
+        "median_ms": 15.764,
+        "p90_ms": 18.063,
+        "mean_ms": 16.251,
+        "n": 100
+      },
+      "c_guard_forward": {
+        "median_ms": 177.335,
+        "p90_ms": 177.526,
+        "mean_ms": 176.971,
+        "n": 100
+      },
+      "c2_guard2_forward": {
+        "median_ms": 27.541,
+        "p90_ms": 29.68,
+        "mean_ms": 27.852,
+        "n": 100
+      },
+      "prompt_tokens": 69,
+      "guard_prompt_tokens": 178,
+      "probe_added_ms": 2.345,
+      "probe_overhead_pct": 12.17,
+      "early_abort_saving_pct": 18.2,
+      "guard_added_ms": 177.335,
+      "guard_overhead_pct": 920.3,
+      "guard2_added_ms": 27.541,
+      "guard2_overhead_pct": 142.9
+    },
+    "256": {
+      "a_prefill": {
+        "median_ms": 20.838,
+        "p90_ms": 23.105,
+        "mean_ms": 21.359,
+        "n": 100
+      },
+      "b_prefill_plus_probe": {
+        "median_ms": 23.136,
+        "p90_ms": 23.303,
+        "mean_ms": 22.32,
+        "n": 100
+      },
+      "d_early_abort_at_L": {
+        "median_ms": 17.06,
+        "p90_ms": 19.305,
+        "mean_ms": 17.336,
+        "n": 100
+      },
+      "c_guard_forward": {
+        "median_ms": 180.577,
+        "p90_ms": 180.776,
+        "mean_ms": 176.801,
+        "n": 100
+      },
+      "c2_guard2_forward": {
+        "median_ms": 40.383,
+        "p90_ms": 40.538,
+        "mean_ms": 40.238,
+        "n": 100
+      },
+      "prompt_tokens": 261,
+      "guard_prompt_tokens": 415,
+      "probe_added_ms": 2.298,
+      "probe_overhead_pct": 11.03,
+      "early_abort_saving_pct": 18.1,
+      "guard_added_ms": 180.577,
+      "guard_overhead_pct": 866.6,
+      "guard2_added_ms": 40.383,
+      "guard2_overhead_pct": 193.8
+    },
+    "1024": {
+      "a_prefill": {
+        "median_ms": 23.059,
+        "p90_ms": 39.391,
+        "mean_ms": 28.579,
+        "n": 100
+      },
+      "b_prefill_plus_probe": {
+        "median_ms": 22.069,
+        "p90_ms": 41.733,
+        "mean_ms": 29.035,
+        "n": 100
+      },
+      "d_early_abort_at_L": {
+        "median_ms": 17.754,
+        "p90_ms": 33.594,
+        "mean_ms": 24.01,
+        "n": 100
+      },
+      "c_guard_forward": {
+        "median_ms": 182.885,
+        "p90_ms": 194.306,
+        "mean_ms": 183.192,
+        "n": 100
+      },
+      "c2_guard2_forward": {
+        "median_ms": 82.742,
+        "p90_ms": 90.434,
+        "mean_ms": 81.311,
+        "n": 100
+      },
+      "prompt_tokens": 1029,
+      "guard_prompt_tokens": 1365,
+      "probe_added_ms": -0.99,
+      "probe_overhead_pct": -4.29,
+      "early_abort_saving_pct": 23.0,
+      "guard_added_ms": 182.885,
+      "guard_overhead_pct": 793.1,
+      "guard2_added_ms": 82.742,
+      "guard2_overhead_pct": 358.8
+    }
+  },
+  "probe_op_only": {
+    "median_ms": 0.177,
+    "p90_ms": 2.274,
+    "mean_ms": 0.868,
+    "n": 1000,
+    "dim": 1536,
+    "note": "each run includes a host sync (.item()); on a time-sliced shared GPU the sync wait dominates"
+  },
+  "probe_op_amortized": {
+    "median_ms": 0.029,
+    "p90_ms": 0.033,
+    "mean_ms": 0.03,
+    "n": 20,
+    "note": "GPU time per probe op, 1000 ops per sync (20 repeats)"
+  },
+  "gpu_status_after": {
+    "util_pct": 98,
+    "mem_used_mib": 16672,
+    "mem_total_mib": 97887,
+    "n_compute_procs_incl_ours": 4
+  }
+}

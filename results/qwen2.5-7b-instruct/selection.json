@@ -1,0 +1,60 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "layer": 20,
+  "pooling": "last",
+  "method": "lr",
+  "n_layers": 28,
+  "val_auroc": 0.9993397472175062,
+  "threshold": -2.3044919967651367,
+  "C": 0.1,
+  "rule": "max plain-val AUROC (4 dp), tie-break val TPR@1%FPR then earlier layer; layer 0 excluded",
+  "top5": [
+    {
+      "layer": 20,
+      "pooling": "last",
+      "method": "lr",
+      "val_auroc": 0.9993,
+      "val_tpr_at_1fpr": 0.9824561403508771
+    },
+    {
+      "layer": 19,
+      "pooling": "last",
+      "method": "lr",
+      "val_auroc": 0.9992,
+      "val_tpr_at_1fpr": 0.9824561403508771
+    },
+    {
+      "layer": 15,
+      "pooling": "mean",
+      "method": "lr",
+      "val_auroc": 0.999,
+      "val_tpr_at_1fpr": 0.9649122807017544
+    },
+    {
+      "layer": 18,
+      "pooling": "mean",
+      "method": "lr",
+      "val_auroc": 0.9989,
+      "val_tpr_at_1fpr": 0.9736842105263158
+    },
+    {
+      "layer": 19,
+      "pooling": "mean",
+      "method": "lr",
+      "val_auroc": 0.9989,
+      "val_tpr_at_1fpr": 0.9298245614035088
+    }
+  ],
+  "aug": {
+    "C": 0.1,
+    "threshold": 0.4466133117675781
+  },
+  "tfidf": {
+    "C": 10,
+    "val_auroc": 0.984814186002641,
+    "threshold": 1.5200956029221278
+  },
+  "n_train": 1194,
+  "n_val": 300,
+  "seconds": 27.2
+}

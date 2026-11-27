@@ -1,0 +1,201 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "layer": 20,
+  "n_layers": 28,
+  "pooling": "last",
+  "guard": "ibm-granite/granite-guardian-3.2-3b-a800m",
+  "guard2": "ibm-granite/granite-guardian-3.1-2b",
+  "runs": 300,
+  "warmup": 10,
+  "batch_size": 1,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+  "gpu_status_before": {
+    "util_pct": 100,
+    "mem_used_mib": 28406,
+    "mem_total_mib": 97887,
+    "n_compute_procs_incl_ours": 4
+  },
+  "lengths": {
+    "64": {
+      "a_prefill": {
+        "median_ms": 38.94,
+        "p90_ms": 39.031,
+        "min_ms": 28.548,
+        "p10_ms": 38.841,
+        "mean_ms": 38.882,
+        "n": 300
+      },
+      "b_prefill_plus_probe": {
+        "median_ms": 41.262,
+        "p90_ms": 41.363,
+        "min_ms": 21.65,
+        "p10_ms": 41.158,
+        "mean_ms": 41.084,
+        "n": 300
+      },
+      "d_early_abort_at_L": {
+        "median_ms": 26.297,
+        "p90_ms": 26.379,
+        "min_ms": 14.744,
+        "p10_ms": 26.224,
+        "mean_ms": 26.08,
+        "n": 300
+      },
+      "c_guard_forward": {
+        "median_ms": 177.298,
+        "p90_ms": 177.479,
+        "min_ms": 116.399,
+        "p10_ms": 151.304,
+        "mean_ms": 171.525,
+        "n": 300
+      },
+      "c2_guard2_forward": {
+        "median_ms": 27.572,
+        "p90_ms": 27.697,
+        "min_ms": 25.165,
+        "p10_ms": 27.447,
+        "mean_ms": 27.688,
+        "n": 300
+      },
+      "prompt_tokens": 69,
+      "guard_prompt_tokens": 178,
+      "probe_added_ms": 2.322,
+      "probe_added_ms_p10": 2.317,
+      "probe_overhead_pct": 5.96,
+      "early_abort_saving_pct": 32.5,
+      "guard_added_ms": 177.298,
+      "guard_overhead_pct": 455.3,
+      "guard2_added_ms": 27.572,
+      "guard2_overhead_pct": 70.8
+    },
+    "256": {
+      "a_prefill": {
+        "median_ms": 61.511,
+        "p90_ms": 63.933,
+        "min_ms": 32.411,
+        "p10_ms": 34.346,
+        "mean_ms": 52.629,
+        "n": 300
+      },
+      "b_prefill_plus_probe": {
+        "median_ms": 63.812,
+        "p90_ms": 64.058,
+        "min_ms": 33.429,
+        "p10_ms": 33.663,
+        "mean_ms": 50.888,
+        "n": 300
+      },
+      "d_early_abort_at_L": {
+        "median_ms": 43.399,
+        "p90_ms": 43.572,
+        "min_ms": 23.415,
+        "p10_ms": 23.569,
+        "mean_ms": 34.693,
+        "n": 300
+      },
+      "c_guard_forward": {
+        "median_ms": 175.506,
+        "p90_ms": 180.707,
+        "min_ms": 121.298,
+        "p10_ms": 146.829,
+        "mean_ms": 168.634,
+        "n": 300
+      },
+      "c2_guard2_forward": {
+        "median_ms": 40.313,
+        "p90_ms": 40.442,
+        "min_ms": 24.146,
+        "p10_ms": 26.506,
+        "mean_ms": 37.464,
+        "n": 300
+      },
+      "prompt_tokens": 261,
+      "guard_prompt_tokens": 415,
+      "probe_added_ms": 2.301,
+      "probe_added_ms_p10": -0.683,
+      "probe_overhead_pct": 3.74,
+      "early_abort_saving_pct": 29.4,
+      "guard_added_ms": 175.506,
+      "guard_overhead_pct": 285.3,
+      "guard2_added_ms": 40.313,
+      "guard2_overhead_pct": 65.5
+    },
+    "1024": {
+      "a_prefill": {
+        "median_ms": 149.297,
+        "p90_ms": 149.458,
+        "min_ms": 81.67,
+        "p10_ms": 140.898,
+        "mean_ms": 145.606,
+        "n": 300
+      },
+      "b_prefill_plus_probe": {
+        "median_ms": 151.64,
+        "p90_ms": 151.855,
+        "min_ms": 80.467,
+        "p10_ms": 150.414,
+        "mean_ms": 148.189,
+        "n": 300
+      },
+      "d_early_abort_at_L": {
+        "median_ms": 105.487,
+        "p90_ms": 105.637,
+        "min_ms": 56.604,
+        "p10_ms": 105.269,
+        "mean_ms": 103.813,
+        "n": 300
+      },
+      "c_guard_forward": {
+        "median_ms": 194.228,
+        "p90_ms": 194.404,
+        "min_ms": 135.488,
+        "p10_ms": 177.408,
+        "mean_ms": 189.953,
+        "n": 300
+      },
+      "c2_guard2_forward": {
+        "median_ms": 90.273,
+        "p90_ms": 90.402,
+        "min_ms": 48.351,
+        "p10_ms": 90.09,
+        "mean_ms": 89.234,
+        "n": 300
+      },
+      "prompt_tokens": 1029,
+      "guard_prompt_tokens": 1365,
+      "probe_added_ms": 2.343,
+      "probe_added_ms_p10": 9.516,
+      "probe_overhead_pct": 1.57,
+      "early_abort_saving_pct": 29.3,
+      "guard_added_ms": 194.228,
+      "guard_overhead_pct": 130.1,
+      "guard2_added_ms": 90.273,
+      "guard2_overhead_pct": 60.5
+    }
+  },
+  "probe_op_only": {
+    "median_ms": 2.272,
+    "p90_ms": 2.281,
+    "min_ms": 0.158,
+    "p10_ms": 2.258,
+    "mean_ms": 2.239,
+    "n": 1000,
+    "dim": 3584,
+    "note": "each run includes a host sync (.item()); on a time-sliced shared GPU the sync wait dominates"
+  },
+  "probe_op_amortized": {
+    "median_ms": 0.029,
+    "p90_ms": 0.03,
+    "min_ms": 0.028,
+    "p10_ms": 0.029,
+    "mean_ms": 0.029,
+    "n": 20,
+    "note": "GPU time per probe op, 1000 ops per sync (20 repeats)"
+  },
+  "gpu_status_after": {
+    "util_pct": 100,
+    "mem_used_mib": 28630,
+    "mem_total_mib": 97887,
+    "n_compute_procs_incl_ours": 4
+  }
+}

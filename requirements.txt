@@ -1,0 +1,12 @@
+accelerate==1.16.0
+datasets==5.2.0
+gradio==6.32.0
+matplotlib==3.11.2
+numpy==2.5.5
+pandas==3.1.1
+pytest==9.2.0
+scikit-learn==1.9.1
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+tqdm==4.70.1
+transformers==5.24.1
